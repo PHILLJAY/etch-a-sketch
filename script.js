@@ -1,4 +1,3 @@
-// TODO:    Create a loop that generates 16x16 divs
 // TODO:    enable them to be hovered (generate this iteratively)
 // TODO:    enable the user to select how many divs they want (grab a number and square
 //          it to the nearest int)
@@ -21,9 +20,15 @@ for (let y = 0; y < 16; y++) {
   for (let x = 0; x < 16; x++) {
     const newDiv = document.createElement("div");
     newDiv.setAttribute("id", `div${y * 16 + x}`);
-    newDiv.setAttribute("margin", "2px");
+    newDiv.setAttribute("class", "pixel]");
+    newDiv.style.width = "5px";
+    newDiv.style.height = "5px";
+    newDiv.style.margin = "1px";
     newDiv.style.backgroundColor = "lightblue";
-    newDiv.textContent = `I am Div ${y * 16 + x}`;
+    newDiv.addEventListener("mouseover", () => {
+      newDiv.style.backgroundColor = "black";
+    });
+    // newDiv.textContent = `I am Div ${y * 16 + x}`;
     flexContainer.appendChild(newDiv);
   }
 }
