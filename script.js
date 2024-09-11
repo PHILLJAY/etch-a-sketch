@@ -14,11 +14,16 @@ const root = document.getElementById("root");
 // root.appendChild(div);
 
 for (let y = 0; y < 16; y++) {
+  const flexContainer = document.createElement("div");
+  flexContainer.setAttribute("id", `flexContainer${y}`);
+  flexContainer.style.display = "flex";
+  root.appendChild(flexContainer);
   for (let x = 0; x < 16; x++) {
     const newDiv = document.createElement("div");
     newDiv.setAttribute("id", `div${y * 16 + x}`);
+    newDiv.setAttribute("margin", "2px");
     newDiv.style.backgroundColor = "lightblue";
     newDiv.textContent = `I am Div ${y * 16 + x}`;
-    root.appendChild(newDiv);
+    flexContainer.appendChild(newDiv);
   }
 }
