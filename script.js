@@ -14,12 +14,18 @@ buttonHolder.append(button);
 button.addEventListener("click", () => {
   const size = getSizeFromUser();
   clearGrid();
-  generateGrid(100);
+  generateGrid(size);
 });
 
 function getSizeFromUser() {
   let size = prompt("enter the grid size you'd like, 16 is the default", 16);
   return size;
+}
+function clearGrid() {
+  const pixels = document.querySelectorAll(".pixel");
+  pixels.forEach((pixel) => pixel.remove());
+  const flexContainers = document.querySelectorAll(".flexContainer");
+  flexContainers.forEach((flexContainer) => flexContainer.remove());
 }
 
 function generateGrid(size) {
