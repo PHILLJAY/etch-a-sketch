@@ -28,6 +28,19 @@ function clearGrid() {
   flexContainers.forEach((flexContainer) => flexContainer.remove());
 }
 
+function returnRGBcolor(mix) {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+
+  if (mix != null) {
+    r = ((r + mix.red) / 2) >> 0;
+    g = ((g + mix.green) / 2) >> 0;
+    b = ((b + mix.blue) / 2) >> 0;
+  }
+  return `${r},${g},${b}`;
+}
+
 function generateGrid(size) {
   for (let y = 0; y < size; y++) {
     const flexContainer = document.createElement("div");
@@ -39,10 +52,14 @@ function generateGrid(size) {
       const newDiv = document.createElement("div");
       newDiv.setAttribute("id", `div${y * 16 + x}`);
       newDiv.setAttribute("class", "pixel");
-      newDiv.style.margin = "1px";
-      newDiv.style.backgroundColor = "lightblue";
+      newDiv.setAttribute("draggable", "false");
+      newDiv.style.backgroundColor = "white";
       newDiv.addEventListener("mouseover", () => {
-        newDiv.style.backgroundColor = "black";
+        newDiv.style.backgroundColor = `rgb(${returnRGBcolor({
+          red: 255,
+          green: 255,
+          blue: 255,
+        })})`;
       });
       flexContainer.appendChild(newDiv);
     }
