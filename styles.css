@@ -2,3 +2,14 @@
   display: flex;
   flex-direction: column;
 }
+
+#clearButton {
+  background-color: #f44336;
+}
+
+#clearButton:hover {
+  background-color: #d32f2f;
+}
+
+.pixel {
+}
