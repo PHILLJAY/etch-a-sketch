@@ -1,5 +1,3 @@
-// TODO:    Scale buttons to said width and height
-// TODO:    Creat event listener for button
 // TODO:    enable the user to select how many divs they want (grab a number and square
 //          it to the nearest int)
 
@@ -13,7 +11,16 @@ button.textContent = "Clear";
 button.setAttribute("id", "clearButton");
 buttonHolder.append(button);
 
-button.addEventListener("click", () => generateGrid(100));
+button.addEventListener("click", () => {
+  const size = getSizeFromUser();
+  clearGrid();
+  generateGrid(100);
+});
+
+function getSizeFromUser() {
+  let size = prompt("enter the grid size you'd like, 16 is the default", 16);
+  return size;
+}
 
 function generateGrid(size) {
   for (let y = 0; y < size; y++) {
@@ -31,7 +38,6 @@ function generateGrid(size) {
       newDiv.addEventListener("mouseover", () => {
         newDiv.style.backgroundColor = "black";
       });
-      // newDiv.textContent = `I am Div ${y * 16 + x}`;
       flexContainer.appendChild(newDiv);
     }
   }
