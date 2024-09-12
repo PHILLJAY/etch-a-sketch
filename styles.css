@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+.alertbox {
+  color: red;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 .pretty-button {
   border: none; /* No border */
   color: white;
