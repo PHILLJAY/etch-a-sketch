@@ -92,7 +92,7 @@ function returnRGBcolor(mix) {
 function generateGrid(size) {
   // Check if the grid size is over 100
   alertBox.textContent = ""; // Clear the alert message
-  if (size > 100) {
+  if (size > 100 || size < 1) {
     size = 16; // Default to 16 if size is over 100
     alertBox.textContent = "ERROR NUMBER, DEFAULTING TO 16"; // Alert the user about the default
   }
