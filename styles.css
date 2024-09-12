@@ -6,12 +6,33 @@
   background-color: darkgrey;
 }
 
-#clearButton {
-  background-color: #f44336;
+#buttonHolder {
+  width: 800px;
+  flex: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#clearButton:hover {
-  background-color: #d32f2f;
+.pretty-button {
+  border: none; /* No border */
+  color: white;
+  padding: 15px 32px; /* Padding around text */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  margin: 1rem;
+  flex-grow: 1;
+  flex: auto;
+}
+
+.pretty-button:hover {
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .pixel {

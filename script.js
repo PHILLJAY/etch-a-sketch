@@ -7,6 +7,32 @@ const root = document.getElementById("root");
 const buttonHolder = document.getElementById("buttonHolder");
 
 const button = document.createElement("button");
+button.setAttribute("class", "pretty-button");
+button.setAttribute("type", "button");
+button.setAttribute("id", "pretty-button");
+button.style.backgroundColor = `rgb(${returnRGBcolor({
+  red: 255,
+  green: 255,
+  blue: 255,
+})}`;
+
+button.addEventListener("mouseover", () => {
+  button.style.backgroundColor =
+    button.style.backgroundColor = `rgb(${returnRGBcolor({
+      red: 100,
+      green: 100,
+      blue: 100,
+    })})`;
+});
+
+button.addEventListener("mouseout", () => {
+  button.style.backgroundColor = `rgb(${returnRGBcolor({
+    red: 255,
+    green: 255,
+    blue: 255,
+  })}`;
+});
+
 button.textContent = "Clear";
 button.setAttribute("id", "clearButton");
 buttonHolder.append(button);
