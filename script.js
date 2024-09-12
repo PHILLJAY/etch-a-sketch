@@ -1,10 +1,22 @@
 let size = 16; // Initialize the default grid size
-generateGrid(size); // Generate the initial grid
 
 // Get references to important HTML elements
 const root = document.getElementById("root"); // The main container for the grid
 const buttonHolder = document.getElementById("buttonHolder"); // Container for the button
+const alertBox = document.getElementById("alertBox"); // Container for the alert message
+const title = document.getElementById("title"); // The title element
 
+//generateGrid(size); // Generate the initial grid
+
+title.style.color = `rgb(${returnRGBcolor({
+  red: 255,
+  green: 255,
+  blue: 255,
+})})`;
+
+alertBox.textContent = "Click Clear to start";
+
+console.log("checkpoint1");
 // Create the "Clear" button element
 const button = document.createElement("button");
 button.setAttribute("class", "pretty-button"); // Add the "pretty-button" class for styling
@@ -79,9 +91,10 @@ function returnRGBcolor(mix) {
 // Function to generate the grid of divs
 function generateGrid(size) {
   // Check if the grid size is over 100
+  alertBox.textContent = ""; // Clear the alert message
   if (size > 100) {
     size = 16; // Default to 16 if size is over 100
-    alert("Grid size too large, defaulting to 16x16."); // Alert the user about the default
+    alertBox.textContent = "ERROR NUMBER, DEFAULTING TO 16"; // Alert the user about the default
   }
 
   for (let y = 0; y < size; y++) {
